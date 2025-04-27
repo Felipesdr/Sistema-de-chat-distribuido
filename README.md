@@ -48,8 +48,6 @@ python multithread_client_socket.py
 O projeto inclui um conjunto de testes para verificar sua funcionalidade:
 - Testes unitários para componentes individuais
 - Testes de integração simulando múltiplos clientes
-- Verificação de log para garantir consistência nas mensagens
-- Testes de carga para avaliar o desempenho sob estresse
 
 ## Conceitos Aplicados de Computação Distribuída
 
