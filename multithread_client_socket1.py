@@ -12,7 +12,7 @@ class ChatClient:
         try:
             self.client.connect((host, port))
 
-            # Protocolo de conexão
+            # Iniciando conexão
             self.client.send("CONNECT".encode())
 
             # Resposta de aceitação da conexão
@@ -33,15 +33,15 @@ class ChatClient:
             time.sleep(1)
 
             # Receber solicitação de nome em uma nova chamada
-            self.client.setblocking(True)  # Garantir que aguarde a próxima mensagem
+            self.client.setblocking(True)
             prompt_data = self.client.recv(1024).decode()
             prompt_parts = prompt_data.split(":", 1)
             server_timestamp = int(prompt_parts[0])
             prompt = prompt_parts[1]
 
             self.update_clock(server_timestamp)
-            print(prompt, end="")  # Exibe o prompt sem quebra de linha
-            self.user_name = input()  # Input na mesma linha
+            print(prompt, end="")
+            self.user_name = input()
 
             # Enviar nome com timestamp
             timestamp = self.increment_clock()
